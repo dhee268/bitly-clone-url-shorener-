@@ -15,10 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.views import xyz, signUp
+from app1.views import xyz, signUp, signin,login, otpVerification,urlshortner,handlingShortUrl
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('xyz/', xyz),
-path('signUp/', signUp),
+    path('signin/',signin),
+    path('signUp', signUp),
+    path('login',login),
+    path('otpVerification',otpVerification),
+    path('urlshortner',urlshortner),
+    path('<url>/',handlingShortUrl)
+
 ]
